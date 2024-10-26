@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empty Project for Practice</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+      <!-- 1. Mouse Events Example: Click Event -->
+
+<button id="myButton">Click Me!</button>
+<script>
+    const button_M = document.getElementById('myButton');
+    button_M.addEventListener('click', function() {
+        alert('Button clicked!');
+    });
+</script>
+
+
+<!-- 2. Keyboard Events Example: Keydown Event -->
+
+<input type="text" id="textInput" placeholder="Type something...">
+<script>
+    const input = document.getElementById('textInput');
+    input.addEventListener('keyup', function(e) {
+        console.log(`Key pressed: ${e.key}`);
+    });
+</script>
+<!-- 3. Form Events Example: Submit Event -->
+
+<form id="myForm">
+    <input type="text" required>
+    <button type="submit">Submit</button>
+</form>
+<script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        alert('Form submitted!');
+    });
+</script>
+<!-- 4. Window Events Example: Load Event -->
+
+<script>
+    window.addEventListener('load', function() {
+        console.log('Page fully loaded!');
+    });
+</script>
+<!-- 5. Touch Events (for mobile) Example: Touchstart Event -->
+
+<div id="touchArea" style="width: 200px; height: 200px; background-color: lightblue;">
+    Touch here
+</div>
+<script>
+    const touchArea = document.getElementById('touchArea');
+    touchArea.addEventListener('touchstart', function() {
+        alert('Touch detected!');
+    });
+</script>
+<!-- 6. Event Delegation Example: Delegated Click Event -->
+
+<ul id="itemList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<script>
+    const list = document.getElementById('itemList');
+    list.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            alert(`You clicked on ${event.target.textContent}`);
+        }
+    });
+</script>
+<!-- 7. Preventing Default Behavior Example: Preventing Default Action -->
+
+<a href="https://www.example.com" id="myLink">Go to Example.com</a>
+<script>
+    const link = document.getElementById('myLink');
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the link from following the URL
+        alert('Link click prevented!');
+    });
+</script>
+
+
+
+<!-- 8. Custom Events Example: Creating and Dispatching Custom Events -->
+
+<button id="dispatchButton">Dispatch Event</button>
+<script>
+    const button = document.getElementById('dispatchButton');
+    
+    // Create a custom event
+    const myEvent = new CustomEvent('myCustomEvent', { detail: { message: 'Hello, Custom Event!' } });
+
+    button.addEventListener('myCustomEvent', function(event) {
+        alert(event.detail.message);
+    });
+
+    button.addEventListener('click', function() {
+        button.dispatchEvent(myEvent); // Dispatch the custom event
+    });
+</script>
+<!-- <div id="touchArea">Touch here</div>
+    <div id="feedback">Touch the blue area to test</div>
+    <script src="script.js"></script> -->
+
+    </body>
+</html>

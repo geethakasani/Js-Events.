@@ -1,0 +1,35 @@
+/* * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+#touchArea {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+#touchArea.active {
+  background-color: #7fbfff;
+  transform: scale(0.95);
+}
+
+#feedback {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
